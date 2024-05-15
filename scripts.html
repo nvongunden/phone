@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Phone Scripts - Arias Florida</title>
+<link rel="icon" href="scripticon.ico" type="image/x-icon">
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<link rel="stylesheet" type="text/css" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Calibri:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+  <div class="left-column">
+    <div>
+      <select id="myDropdown" onchange="handleSelection()" class="dropdown-option">
+        <option value="HARDCARD" selected>HARDCARD</option>
+        <option value="WILLKIT">WILLKIT</option>
+        <option value="CHILDSAFE">CHILDSAFE</option>
+        <option value="BENEFICIARY">BENEFICIARY</option>
+        <option value="REFERRAL">REFERRAL</option>
+        <!--
+  <option value="POS">POS</option>
+-->
+      </select>
+ <input type="checkbox" id="singleCheckbox" onclick="togglesingle()" style="width: unset;"><span class="cb-text">SINGLE</span>
+      <input type="text" id="memberInput" placeholder="MEMBER" oninput="validateInput(this)" onfocus="clearPlaceholder(this)" onblur="restorePlaceholder(this)">
+      <input type="text" id="spouseInput" placeholder="SPOUSE" oninput="validateInput(this)" onfocus="clearPlaceholder(this)" onblur="restorePlaceholder(this)">
+<span class="script-type HARDCARD">
+	<input type="text" id="groupInput" placeholder="GROUP" oninput="validateInput(this)" onfocus="clearPlaceholder(this)" onblur="restorePlaceholder(this)">
+</span>
+<span class="script-type REFERRAL">
+    <input type="text" id="sponsorInput" placeholder="SPONSOR" oninput="validateInput(this)" onfocus="clearPlaceholder(this)" onblur="restorePlaceholder(this)">
+    <input type="text" id="sponsorgroupInput" placeholder="GROUP" oninput="validateInput(this); toggleUnion()" onfocus="clearPlaceholder(this)" onblur="restorePlaceholder(this)">
+</span>
+      <input type="text" id="agentName" placeholder="AGENT" oninput="validateInput(this)" onfocus="clearPlaceholder(this)" onblur="restorePlaceholder(this)">
+    </div>
+<span class="script-type HARDCARD">
+    <div class="phone-step-container"><!DOCTYPE html>
+<span class="phone-step">INTRO</span><br>
+Hello, may I speak to <span class="VERBALChar memberDisplay">Member</span>? This is <span class="VERBALChar agentDisplay">Agent</span> with American Income, Local 277. We handle your benefits through your <span class="VERBALChar groupDisplay">Group</span>. They sent you a letter a while ago about this and YOU returned a yellow 3x5 inch card. Do you remember doing that?
+
+<p><strong>If NO:</strong> It looks like you put down (Beneficiary) as your beneficiary, does that ring a bell?</p></div>
+    <div class="phone-step-container"><!DOCTYPE html>
+<span class="phone-step">REASON FOR MEETING</span><br>
+I just need to verify the information <strong>YOU WROTE DOWN</strong>. Now, <span class="VERBALChar memberDisplay">Member</span>, <strong>YOU WROTE DOWN</strong> your address as <span class="VERBALChar">(Address)</span>. Is that correct? Ok Great! Next thing <strong>YOU WROTE DOWN</strong> is your date of birth as <span class="VERBALChar">(D.O.B.)</span>. Is that correct? For the beneficiary of the life insurance policy, <strong>YOU WROTE DOWN</strong> <span class="VERBALChar">(Beneficiary)</span>. Is that still, correct?
+
+<p>Awesome! It looks like you are one of the members who hasn't received their benefits package yet and it's my job to get you caught up with all the other members.</p></div>
+    <div class="phone-step-container"><!DOCTYPE html>
+<span class="phone-step">SETTING THE APPOINTMENT</span><br>
+We do everything on Zoom now, rather than coming out to your house. Have you ever used Zoom before? Okay great! It’s super easy to use. What time do you<span class="couple"> and <span class="spouseDisplay VERBALChar">Spouse</span></span> normally get home from work?
+
+<p>My schedule is filling up very fast right now, but I have availability (day/time) or (day/time). Which time works best<span class="couple"> for you and <span class="spouseDisplay VERBALChar">Spouse</span></span>? Okay perfect!</p></div>
+    <div class="phone-step-container"><!DOCTYPE html>
+<span class="phone-step">SOLIDIFY THE APPOINTMENT</span><br>
+Do me a favor, grab a pen and paper. I have some very important information that I need you to write down. Let me know when you're ready...
+	<ul>
+<li>Okay, go ahead and write down my name and number. It's <strong>(spell first name)</strong> and <strong>(phone #)</strong>. Got that?</li>
+<li>Next, go ahead and write down the day and time of our appointment, which is
+<strong>(day/time)</strong>. Got that?</li>
+	</ul>
+<br>
+What's a good email to where I can send the Zoom link? Is this your cell phone number?
+<br>
+<br>
+Okay great! Tomorrow morning, I'll send you a quick reminder text about our meeting. Once you receive it, please reply with a "thumbs up" emoji or a "good to go" message, okay? Wonderful! It's very IMPORTANT that you're <span class="couple">both </span>there. Sound good? Awesome! I look forward to talking to you <span class="couple">and <span class="VERBALChar spouseDisplay">Spouse</span> </span>tomorrow at <strong>(day/time)</strong>. Have a great night!
+
+<div style="margin-top: 10px; padding: 10px; background-color: #00558C; color: white;">
+*Ask about taking kids to sports or anything going on after work.<br>
+*Make sure spouse will be there.<br>
+*Schedule an hour after from when they tell you they get home from work.
+	</div></div>
+	</span>
+<span class="script-type WILLKIT">
+    <div class="phone-step-container"><!DOCTYPE html>
+<span class="phone-step">INTRO</span><br>
+Hello, may I speak to <span class="VERBALChar memberDisplay">Member</span>? This is <span class="VERBALChar agentDisplay">Agent</span> with the Will Kit program.</div>
+    <div class="phone-step-container"><!DOCTYPE html>
+<span class="phone-step">REASON FOR CALLING</span><br>
+I'm just calling because you requested a Will
+and Testament on <strong>(Date)</strong>. Do you remember doing that?<br>
+<span class="indent"><strong>If NO:</strong> You were probably on Facebook and saw our ad. Looks like you did it on <strong>(Date)</strong>. Does that ring a bell?</span>
+<span class="indent"><strong>If YES:</strong> Good news, Your Will Kit just came in, I’m just calling to verify what you filled out so we can send them out to you. It looks like you put your address as <strong>(Address)</strong>. Is that correct? You put your email as <strong>(Email)</strong>. Is that correct?</span>
+	
+<p>Also, YOU REQUESTED <strong>(#)</strong> Will Kits? Is that correct?<br>
+<span class="indent"><strong>If only 1 Will Kit:</strong> Did you only need one Will Kit, or did you need one for your spouse as well?</span>
+<span class="indent"><strong>If 2 Will Kits:</strong> Okay and im assuming the second is for a spouse or significant other?</span></p>
+
+The Will Kit is free, it’s just my job to run through instructions real quick with you because there are a few confusing secitons. We explain everything over a super quick and easy zoom meeting, it usually only takes 10-15 mintues.</div>
+    <div class="phone-step-container"><!DOCTYPE html>
+<span class="phone-step">SETTING THE APPOINTMENT</span><br>
+Okay. Are you <span class="couple">both </span>working today? (TRY TO CALL INTO)<br>
+<br><span class="indent"><strong>If NO:</strong> Okay perfect we’ll knock this out real quick then, do you have a spouse or significant other because we need both of you guys to understand how these work. (IF SPOUSE IS NOT HOME: What time will your spouse be home today?)</span>
+<span class="indent"><strong>If YES:</strong> What time do you normally get home from work? And do you have a spouse or significant other? (IF YES: What time do they usually get home?)</span>
+<p>Okay, I'm pretty booked up right now but I could squeeze you in today/tomorrow at ___ or ____. Which time works best for you<span class="couple"> and <span class="spouseDisplay VERBALChar">Spouse</span></span>?</p></div>
+    <div class="phone-step-container"><!DOCTYPE html>
+<span class="phone-step">SOLIDIFY THE APPOINTMENT</span><br>
+Is this the best number for me to call you at tomorrow? The ####? Last thing! I’ll be giving you a call tomorrow morning to remind you of the appointment. If for whatever reason you don’t answer I’ll leave a voicemail. Is that fair? Okay perfect. I look forward to speaking with you<span class="couple"> and <span class="spouseDisplay VERBALChar">Spouse</span></span> today/tomorrow at <strong>(Time)</strong>.</div>
+	</span>
+<span class="script-type CHILDSAFE">
+    <div class="phone-step-container"><!DOCTYPE html>
+<span class="phone-step">INTRO</span><br>
+Hello, may I speak to <span class="VERBALChar memberDisplay">Member</span>? Hey <span class="VERBALChar memberDisplay">Member</span>! This is <span class="VERBALChar agentDisplay">Agent</span> with American Income calling about the Child Safe Kits that you recently requested! It looks like you requested <span class="VERBALChar">(#)</span> of these child safe kits. Is that still correct?</div>
+    <div class="phone-step-container"><!DOCTYPE html>
+<span class="phone-step">REASON FOR MEETING</span><br>
+Okay, I need to verify the information you put down so we can help you get your child safe kits activated... you listed your address as <span class="VERBALChar">(Address)</span>. Is that still correct? Perfect! And lastly, you put your email as _____, is that still correct?
+<br>
+<br>
+<span class="phone-step">SETTING THE APPOINTMENT</span><br>
+The process to activate your child safety kits is super quick and easy, we explain how it works to you real fast over a 10-15 minute phone call. Are you working today? (TRY TO CALL RIGHT INTO)<br>
+<br><span class="indent"><strong>If NO:</strong> Okay perfect we’ll knock this out real quick then, do you have a spouse or significant other because we need both of you guys to understand how these work. (IF SPOUSE IS NOT HOME: What time will your spouse be home today?)</span>
+<span class="indent"><strong>If YES:</strong> What time do you normally get home from work? And do you have a spouse or significant other? (IF YES: What time do they usually get home?)</span>
+
+<p>My schedule is filling up very fast right now, but I have availability (day/time) or (day/time). Which time works best<span class="couple"> for you and <span class="spouseDisplay VERBALChar">Spouse</span></span>? Okay perfect!</p></div>
+    <div class="phone-step-container"><!DOCTYPE html>
+<span class="phone-step">SOLIDIFY THE APPOINTMENT</span><br>
+Is this the best number for me to call you at tomorrow? The ####? Last thing! I’ll be giving you a call tomorrow morning to remind you of the appointment. If for whatever reason you don’t answer I’ll leave a voicemail. Is that fair? Okay perfect. I look forward to speaking with you<span class="couple"> and <span class="spouseDisplay VERBALChar">Spouse</span></span> today/tomorrow at <strong>(Time)</strong>.
+</div>
+	</span>
+<span class="script-type BENEFICIARY">
+    <div class="phone-step-container"><!DOCTYPE html>
+<span class="phone-step">INTRO</span><br>
+Hello, may I speak to <span class="VERBALChar memberDisplay">Member</span>? Hey <span class="VERBALChar memberDisplay">Member</span>, this is <span class="VERBALChar agentDisplay">Agent</span> with American Income, <span class="VERBALChar sponsorDisplay">Sponsor</span>'s' life insurance company. Were you able to see that message I sent in the groupchat together?
+<br>
+<br>
+Okay perfect!. So they have me reaching out to you to go over how to make a claim on the policy and just a couple other things you are responsible for as the beneficiary. Does that make sense?
+<br>
+<br>
+<b>YES:</b> Okay perfect and then did you have a spouse as well? This is going to pay out to your family so they want to make sure both of you have this information just in case.
+<br><b>NO:</b> Gotcha so the reason that they have us reaching out is because last year over 7 million dollars went unclaimed and that is the absolute last thing we want, is for <span class="VERBALChar sponsorDisplay">Sponsor</span> to get this get up and his family isn't able to be paid out on it</div>
+    <div class="phone-step-container"><!DOCTYPE html>
+<span class="phone-step">SETTING THE APPOINTMENT</span><br>
+The process to explain the beneficiary responsibilities is super quick and easy, we explain how it works to you real fast over a 10-15 minute zoom call. Are you working today? (TRY TO CALL RIGHT INTO)<br>
+<br><span class="indent"><strong>If NO:</strong> Okay perfect we’ll knock this out real quick then, do you have a spouse or significant other because we need both of you guys to understand how these work. (IF SPOUSE IS NOT HOME: What time will your spouse be home today?)</span>
+<span class="indent"><strong>If YES:</strong> What time do you normally get home from work? And do you have a spouse or significant other? (IF YES: What time do they usually get home?)</span>
+        
+<p>My schedule is filling up very fast right now, but I have availability (day/time) or (day/time). Which time works best<span class="couple"> for you and <span class="spouseDisplay VERBALChar">Spouse</span></span>? Okay perfect!</p></div>
+    <div class="phone-step-container"><!DOCTYPE html>
+<span class="phone-step">SOLIDIFY THE APPOINTMENT</span><br>
+Now I want to make sure you know whos calling you back at that time so go ahead and open up your contacts. Let me know when you are ready...
+	<ul>
+<li>Okay, so my name is <strong>(spell first name)</strong>. And then I will go ahead and give you my personal phone number which is <strong>(phone #)</strong>. Got that?</li>
+	</ul>
+<br>
+Great, now make sure you are ready for my phone call and I look forward to going over everything with you later today. Have a good rest of your day.
+<br>
+</div>
+	</span>
+    <span class="script-type REFERRAL">
+        <div class="phone-step-container"><!DOCTYPE html>
+            <span class="phone-step">INTRO</span><br>
+            Hello, may I speak to <span class="VERBALChar memberDisplay">Member</span>? Hey <span class="VERBALChar memberDisplay">Member</span>, this is <span class="VERBALChar agentDisplay">Agent</span> with American Income, <span class="VERBALChar sponsorDisplay">Sponsor</span>'s' life insurance company. Were you able to see that message I sent in the groupchat together?
+            <br>
+            <br>
+            Okay perfect!. So they have me reaching out to you to go over the free life insurance policy they sponsored you for. <span class="VERBALChar sponsorDisplay">Sponsor</span> already took care of the cost for you so make sure you thank them!
+</div>
+                <div class="phone-step-container"><!DOCTYPE html>
+            <span class="phone-step">SETTING THE APPOINTMENT</span><br>
+            The process to explain the certificate of coverage is super quick and easy, we explain how it works to you real fast over a 10-15 minute zoom call. Are you working today? (TRY TO CALL RIGHT INTO)<br>
+            <br><span class="indent"><strong>If NO:</strong> Okay perfect we’ll knock this out real quick then, do you have a spouse or significant other because we need both of you guys to understand how these work. (IF SPOUSE IS NOT HOME: What time will your spouse be home today?)</span>
+            <span class="indent"><strong>If YES:</strong> What time do you normally get home from work? And do you have a spouse or significant other? (IF YES: What time do they usually get home?)</span>
+                    
+            <p>My schedule is filling up very fast right now, but I have availability (day/time) or (day/time). Which time works best<span class="couple"> for you and <span class="spouseDisplay VERBALChar">Spouse</span></span>? Okay perfect!</p></div>
+                <div class="phone-step-container"><!DOCTYPE html>
+            <span class="phone-step">SOLIDIFY THE APPOINTMENT</span><br>
+            Now I want to make sure you know whos calling you back at that time so go ahead and open up your contacts. Let me know when you are ready...
+                <ul>
+            <li>Okay, so my name is <strong>(spell first name)</strong>. And then I will go ahead and give you my personal phone number which is <strong>(phone #)</strong>. Got that?</li>
+                </ul>
+            <br>
+            Great, now make sure you are ready for my phone call and I look forward to going over everything with you later today. Have a good rest of your day.
+            <br>
+            </div>
+        </span>
+  </div>
+  <div class="right-column toggle-hide">
+<span class="script-type HARDCARD">
+    <div class="phone-step-container"><!DOCTYPE html> 
+<span class="ConditionalChar">Wait, what is this for?</span><br>
+<span>This is your permanent death benefit through the union. Do you still want (Beneficiary) as your beneficiary? &rarr; <span class="smallfont">(Quickly back to script)</span></span>
+	
+<p><span class="ConditionalChar">Why does my spouse need to be there?</span><br>
+<span>When something happens to you, your spouse will need to know how the benefits work and how to make a claim on all of the money. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+	
+<p><span class="ConditionalChar">Can you just mail it to me?</span><br>
+<span><span class="VERBALChar memberDisplay">Member</span>, that’s what we did originally. We mailed you a letter of explanation. Now my job is to explain your benefits to you, and get you caught up with all the other members. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+	
+<p><span class="ConditionalChar">Do I have to do this?</span><br>
+<span>Yes, <span class="VERBALChar memberDisplay">Member</span>. These are the permanent benefits from the union. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+	
+<p><span class="ConditionalChar">Someone has already come out / I already did this:</span><br>
+<span>Actually, this is completely different <span class="VERBALChar memberDisplay">Member</span>! They actually changed all the benefits you are receiving. You’re going to want to see them. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+	
+<p><span class="ConditionalChar">I’m not interested:</span><br>
+<span>No problem <span class="VERBALChar memberDisplay">Member</span>, but let me ask you this, did you make it to the meetings when they talked about this program? (Continue on no matter what they say) That’s exactly why I am calling. My job is to explain the updated benefits and get you caught up with all the other members. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+	
+<p><span class="ConditionalChar">I’m not in the union anymore:</span><br>
+<span>Really? Well you got lucky, <span class="VERBALChar memberDisplay">Member</span>! Since your enrollment card was filled out while you were still in the union, they’re going to let you keep all the benefits for you and your family! These are the permanent benefits that you get to keep, even when you change jobs or retire. Since you already changed jobs, this is your last chance to get them. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+	
+<p><span class="ConditionalChar">I don't know what time my spouse gets home:</span><br>
+<span>Okay <span class="VERBALChar memberDisplay">Member</span>, when is the latest he/she gets home? Ok. I have a <strong>(day/time)</strong> or <strong>(day/time)</strong> tomorrow which one do you want? &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+	
+<p><span class="ConditionalChar">How much will this cost?</span><br>
+<span>The benefits are at no cost to you. My job is to explain the updated benefits and get you caught up with all the other members. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+	
+	
+<!--
+<span class="ConditionalChar">How long is this going to take?</span><br>
+<span>It depends on how many questions you have. I'm very busy, so I'll need to keep it short. &rarr; <span class="smallfont">(Quickly back to script)</span></span>
+
+<p><span class="ConditionalChar">I can't talk right now. / I'm at work.</span><br>
+<span>No problem, I'll get straight to the point! &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+
+<p><span class="ConditionalChar">Why can't you mail it to me?</span><br>
+<span>Great question! That was the first step. You got a letter in the mail and now I have your reply card. The final step is very easy. I just need to set you up with everything over a quick video meeting. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+
+<p><span class="ConditionalChar">Why does my spouse need to be there?</span><br>
+<span>Great question! When something happens to you, your spouse will need to understand how the benefits work and how to make a claim on all of the money. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+
+<p><span class="ConditionalChar">We're not buying anything.</span><br>
+<span>Thank you for letting me know that. I'm a terrible salesman anyway so you just saved me a bunch of time. It's just my job to explain your benefits, activate the permanent ones and get you caught up with everyone else. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+
+<p><span class="ConditionalChar">How much will this cost?</span><br>
+<span>Great question! The benefits you receive as a union member are at no cost. It's just my job to explain your benefits, activate the permanent ones and get you caught up with everyone else. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+
+<p><span class="ConditionalChar">I'm not interested. / What's this all about? / We already have insurance.</span><br>
+<span>No problem. But let's take a step back. Have you been to the meetings where they talked about this program? (No matter what they say, move on!) That's exactly why I'm calling. It's just my job to explain your benefits, activate the permanent ones and get you caught up with everyone else. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+
+<p><span class="ConditionalChar">Someone has already come out / I already did this.</span><br>
+<span>Actually, this is completely different <span class="VERBALChar memberDisplay">Member</span>! They actually changed all the benefits you are receiving. You're going to want to see them. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+
+<p><span class="ConditionalChar">I don't remember any card.</span><br>
+<span>That's exactly why I'm calling. There are so many members who sent back the card that it has taken us a while to get to them all. However, I'll show you a copy of the card, which will help to refresh your memory. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+
+<p><span class="ConditionalChar">I'm not part of the union anymore.</span><br>
+<span>That's exactly why I'm calling. These benefits are permanent, and you can keep them even if you are no longer part of the union. It's just my job to explain your benefits, activate the permanent ones and get you caught up with everyone else. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+--></div>
+		  </span>
+<span class="script-type WILLKIT">
+    <div class="phone-step-container"><!DOCTYPE html>
+<div class="wk_phone_rebuttals" style="background-color: #FFF; border-radius: 10px; padding: 10px; margin-bottom: 20px;"> 
+	
+<span class="ConditionalChar">I already got that taken care of.</span><br>
+<span class="rebuttal">Perfect, we’re still going to send it to you since it’s at no cost.. Anyways &rarr; <span class="smallfont">(Quickly back to script)</span></span>
+	
+<p><span class="ConditionalChar">I'm going to have my attorney do this.</span><br>
+<span class="rebuttal">Perfect, its just my job to go through the instructions before we send it and then you and your attorney will fill it out together. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+
+<p><span class="ConditionalChar">Were not interested.</span><br>
+<span class="rebuttal">No worries were still going to send this to you since it’s at no cost...
+&rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+	
+<p><span class="ConditionalChar">What is it?</span><br>
+<span class="rebuttal">I'm glad that you asked. It's the Free Will Kit that you ordered online <strong>(date and time)</strong>. My job is to help you set it up. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+
+<p><span class="ConditionalChar">I already have one set up.</span><br>
+<span class="rebuttal">Thank you for letting me know because that's going to save us some time. They've recently added some details that cover the new probate regulations. We'll just need to update yours with the new one so that your family doesn't end up in probate court. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+
+<p><span class="ConditionalChar">I don't want it.</span><br>
+<span class="rebuttal">I can understand that. Nobody likes to think about this subject. I've even heard a few people say that in the past, but when I mailed the Will Kit to them anyway, they called me back and were super grateful, especially since it's at no cost and comes with a living will too. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+
+<p><span class="ConditionalChar">I ordered these a while ago!</span><br>
+<span class="rebuttal">Thank you for letting me know, and that's exactly why I'm calling. We've been on back order since COVID-19. I must say, I'm shocked that we got yours in as quickly as we did. Now that it's finally here, my job is to help you set up the Will Kit and get it out to you.&rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+
+<p><span class="ConditionalChar">Can you just mail it to me?</span><br>
+<span class="rebuttal">That's exactly what I'm going to do. They just require me to explain how to fill it out and where to get it notarized so that your family doesn't end up in probate court. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+	
+<p><span class="ConditionalChar">Mail it out to me, I don't want to meet with you/Why do you have to go over this with me?</span><br>
+<span class="rebuttal">I wish I could just mail it out, but we're required to go over the instructions since it's a legal document, before we mail everything out. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+</div></div>
+	</span>
+<span class="script-type CHILDSAFE">
+    <div class="phone-step-container"><!DOCTYPE html>
+<div class="wk_phone_rebuttals" style="background-color: #FFF; border-radius: 10px; padding: 10px; margin-bottom: 20px;">
+    <span class="ConditionalChar">I don't remember doing this!</span><br>
+    <span>Oh really? Well, don't feel bad if you forgot. You requested this on Facebook back on (date). &rarr; <span class="smallfont">(Quickly back to script)</span></span>
+
+    <p><span class="ConditionalChar">Do we have to do a Zoom meeting? / Do I have to do this? / Why do I have to do this?</span><br>
+    <span>Once we explain the Child Safe Kits, you'll scan a unique QR code to set up your Child Safe Kits. This ensures that every parent fills them out properly and improves the effectiveness of the Amber Alert system. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+
+    <p><span class="ConditionalChar">I'm not interested</span><br>
+    <span>I can understand how you feel about that. However, the police tell us that when a child goes missing it takes parents up to 5 hours to gather this vital information in order to organize the search to find the child ALIVE. This Child Safe Kit is designed to minimize the time to locate them. It's my job to deliver the Child Safe Kits and explain the Family Care Program. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+
+    <p><span class="ConditionalChar">What is this all about?</span><br>
+    <span>This is about the Child Safe Kits that you (requested online/were sponsored) for by (Referrer). The Child Safe Kits are basically fingerprint kits for your kids. If they ever go missing, you'll be able to use these kits to help find them faster. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+
+    <p><span class="ConditionalChar">I already have a child safe kit</span><br>
+    <span>That's exactly why I'm calling! They went digital now so everyone is getting an update. Once we explain the new Child Safe Kits, you'll scan a unique QR code to set up your Child Safe Kits. This ensures that every parent fills them out properly and improves the effectiveness of the Amber Alert system. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+
+    <p><span class="ConditionalChar">Can you mail it to me?</span><br>
+    <span>We used to mail them but we found out that not everyone was filling them out correctly or at all. Once we explain the Child Safe Kits, you'll scan a unique QR code to set up your Child Safe Kits. This ensures that every parent fills them out properly and improves the effectiveness of the Amber Alert system. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+
+    <p><span class="ConditionalChar">How much does this cost?</span><br>
+    <span>Lucky you! Since you requested these kits online when you did, they are at no cost to you!  <span class="smallfont">(back to script)</span><br>
+    - OR -<br>
+    Lucky you! You were sponsored by (Referrer) and they took care of the cost for you! &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+
+    <p><span class="ConditionalChar">Can you call me back?</span><br>
+    <span>Oh ok, I'll get you off the phone real quick. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+  </div></div>
+	</span>
+<span class="script-type REFERRAL">
+    <div class="phone-step-container"><!DOCTYPE html>
+<div class="ref_phone_rebuttals" style="background-color: #FFF; border-radius: 10px; padding: 10px; margin-bottom: 20px;"> 
+<span class="ConditionalChar">How long is this going to take?</span><br>
+<span class="rebuttal">It depends on how many questions you have. I'm very busy, so I'll need to keep it short. &rarr; <span class="smallfont">(Quickly back to script)</span></span>
+
+<p><span class="ConditionalChar">I can't talk right now. / I'm at work.</span><br>
+<span class="rebuttal">No problem, I'll get straight to the point! &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+
+<p><span class="ConditionalChar">Why can't you mail it to me?</span><br>
+<span class="rebuttal">That's exactly what I'm going to do. Your sponsor took care of the cost, so I just need to explain everything over a quick video meeting before I can mail it out. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+
+<p><span class="ConditionalChar">Why does my spouse need to be there?</span><br>
+<span class="rebuttal">Great question! When something happens to you, your spouse will need to understand how the benefits work and how to make a claim on all of the money. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+
+<p><span class="ConditionalChar">We're not buying anything.</span><br>
+<span class="rebuttal">Thank you for letting me know that. I'm a terrible salesman anyway so you just saved me a bunch of time. It's just my job to explain your benefits, activate the permanent ones and get you caught up with everyone else. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+
+<p><span class="ConditionalChar">How much will this cost?</span><br>
+<span class="rebuttal">Great question! The cost was already taken care of by your sponsor. It's just my job to explain your benefits, activate the permanent ones and get you caught up with everyone else. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+
+<p><span class="ConditionalChar">I'm not interested. / What's this all about? / We already have insurance.</span><br>
+<span class="rebuttal">No problem. But let's take a step back. Did your sponsor explain the benefit program to you? (No matter what they say, move on!) That's exactly why I'm calling. It's just my job to explain your benefits, activate the permanent ones and get you caught up with everyone else. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+<!--
+<p><span class="ConditionalChar">Someone has already come out / I already did this:</span><br>
+<span class="rebuttal">Actually, this is completely different <span class="VERBALChar memberOutput"></span>! They actually changed all the benefits you are receiving. You're going to want to see them. &rarr; <span class="smallfont">(Quickly back to script)</span></span></p>
+-->
+</div>
+</div>
+	</span>
+  </div>
+</div>
+<script>
+  function handleSelection() {
+    var dropdown = document.getElementById("myDropdown");
+    var selectedValue = dropdown.value;
+
+    var spans = document.getElementsByClassName("script-type");
+
+    for (var i = 0; i < spans.length; i++) {
+      spans[i].style.display = "none";
+    }
+
+    var selectedSpans = document.getElementsByClassName(selectedValue);
+
+    for (var j = 0; j < selectedSpans.length; j++) {
+      selectedSpans[j].style.display = "inline";
+    }
+  }
+
+function togglesingle() {
+  var singleCheckbox = document.getElementById("singleCheckbox");
+  var singleSpans = document.getElementsByClassName("single");
+  var coupleSpans = document.getElementsByClassName("couple");
+
+  if (singleCheckbox.checked) {
+	  document.getElementById('spouseInput').disabled = true;
+    // Show single spans and hide couple spans
+    for (var i = 0; i < singleSpans.length; i++) {
+      singleSpans[i].style.display = "inline";
+    }
+    for (var j = 0; j < coupleSpans.length; j++) {
+      coupleSpans[j].style.display = "none";
+    }
+  } else {
+      document.getElementById('spouseInput').disabled = false;
+    // Show couple spans and hide single spans
+    for (var k = 0; k < singleSpans.length; k++) {
+      singleSpans[k].style.display = "none";
+    }
+    for (var l = 0; l < coupleSpans.length; l++) {
+      coupleSpans[l].style.display = "inline";
+    }
+  }
+}
+	
+function toggleUnion() {
+  var sponsorgroupInput = document.getElementById("sponsorgroupInput");
+  var nonunionSpans = document.getElementsByClassName("nonunion");
+  var unionSpans = document.getElementsByClassName("union");
+
+  if (sponsorgroupInput.value !== "") {
+    // Show union spans and hide nonunion spans
+    for (var i = 0; i < unionSpans.length; i++) {
+      unionSpans[i].style.display = "inline";
+    }
+    for (var j = 0; j < nonunionSpans.length; j++) {
+      nonunionSpans[j].style.display = "none";
+    }
+  } else {
+    // Show nonunion spans and hide union spans
+    for (var k = 0; k < unionSpans.length; k++) {
+      unionSpans[k].style.display = "none";
+    }
+    for (var l = 0; l < nonunionSpans.length; l++) {
+      nonunionSpans[l].style.display = "inline";
+    }
+  }
+}
+	
+function clearPlaceholder(inputElement) {
+    inputElement.setAttribute('data-placeholder', inputElement.getAttribute('placeholder'));
+    inputElement.setAttribute('placeholder', '');
+}
+
+function restorePlaceholder(inputElement) {
+    inputElement.setAttribute('placeholder', inputElement.getAttribute('data-placeholder'));
+}
+	
+function validateInput(input) {
+  // Remove any non-alphabetic characters from the input value
+  input.value = input.value.replace(/[^a-zA-Z]/g, '');
+}
+// Retrieve the input element
+const agentNameInput = document.getElementById('agentName');
+
+// Function to update the display
+function updateDisplay(inputText, displayText) {
+    document.querySelectorAll(displayText).forEach(element => {
+        element.textContent = inputText;
+    });
+}
+
+// Load the saved value from local storage when the page loads
+window.addEventListener('load', () => {
+  const savedAgentName = localStorage.getItem('savedAgentName');
+  if (savedAgentName) {
+    agentNameInput.value = savedAgentName;
+    // Update the agentDisplay with the saved value
+    updateDisplay(savedAgentName, '.agentDisplay');
+  }
+});
+
+// Save the value to local storage when the input field loses focus (onblur)
+agentNameInput.addEventListener('blur', () => {
+  const newAgentName = agentNameInput.value;
+  localStorage.setItem('savedAgentName', newAgentName);
+});
+	
+    // Function to update the display
+    function updateDisplay(inputText, displayText) {
+        document.querySelectorAll(displayText).forEach(element => {
+            element.textContent = inputText;
+        });
+    }
+
+    // Listen for the input event on the text field
+    document.getElementById('memberInput').addEventListener('input', function() {
+        var inputText = document.getElementById('memberInput').value || "Member";
+        updateDisplay(inputText, '.memberDisplay');
+    });
+    // Listen for the input event on the text field
+    document.getElementById('spouseInput').addEventListener('input', function() {
+        var inputText = document.getElementById('spouseInput').value || "Spouse";
+        updateDisplay(inputText, '.spouseDisplay');
+    });    
+    // Listen for the input event on the text field
+    document.getElementById('agentName').addEventListener('input', function() {
+        var inputText = document.getElementById('agentName').value || "Agent";
+        updateDisplay(inputText, '.agentDisplay');
+    });
+    // Listen for the input event on the text field
+    document.getElementById('groupInput').addEventListener('input', function() {
+        var inputText = document.getElementById('groupInput').value || "Group";
+        updateDisplay(inputText, '.groupDisplay');
+    });
+    // Listen for the input event on the text field
+    document.getElementById('sponsorInput').addEventListener('input', function() {
+        var inputText = document.getElementById('sponsorInput').value || "Sponsor";
+        updateDisplay(inputText, '.sponsorDisplay');
+    });
+    // Listen for the input event on the text field
+    document.getElementById('sponsorgroupInput').addEventListener('input', function() {
+        var inputText = document.getElementById('sponsorgroupInput').value || "Sponsors Group";
+        updateDisplay(inputText, '.sponsorgroupDisplay');
+    });
+	
+function toggleVisibility(className, hide, show) {
+  const elements = document.getElementsByClassName(className);
+  const button = document.getElementById('toggleButton');
+  
+  for (let i = 0; i < elements.length; i++) {
+    if (elements[i].style.display === 'none') {
+      elements[i].style.display = 'grid';
+      button.textContent = hide;
+    } else {
+      elements[i].style.display = 'none';
+      button.textContent = show;
+    }
+  }
+}
+function toggleInstant() {
+    var toggleInstantButton = document.getElementById('toggleInstant');
+    const instantElements = document.getElementsByClassName('instant');
+    const setElements = document.getElementsByClassName('set');
+
+    if (toggleInstantButton.textContent === 'SWITCH TO INSTANT IF HOME') {
+        toggleInstantButton.textContent = 'SWITCH BACK TO SET APPT';
+
+      for (let i = 0; i < instantElements.length; i++) {
+        instantElements[i].style.display = 'inline';
+      }
+      for (let j = 0; j < setElements.length; j++) {
+        setElements[j].style.display = 'none';
+      }
+    } else {
+        toggleInstantButton.textContent = 'SWITCH TO INSTANT IF HOME';
+
+      for (let i = 0; i < setElements.length; i++) {
+        setElements[i].style.display = 'inline';
+      }
+      for (let j = 0; j < instantElements.length; j++) {
+        instantElements[j].style.display = 'none';
+      }
+    }
+}
+	
+handleSelection();
+</script>
+</body>
+</html>
